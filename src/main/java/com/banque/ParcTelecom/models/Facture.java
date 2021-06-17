@@ -3,11 +3,7 @@ package com.banque.ParcTelecom.models;
 import java.sql.Date;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 
 @Entity
@@ -19,9 +15,9 @@ public class Facture {
 	private Date datefacture;
 	private String nom;
 	private int montantf;
-	@OneToOne(targetEntity = Contrat.class)
+	@OneToMany(targetEntity = Contrat.class)
 	private List<Contrat> numcontrat;
-	@OneToOne(targetEntity = Prestataire.class)
+	@OneToMany(targetEntity = Prestataire.class)
 	private List<Prestataire> numprestataire;
 	
 	
